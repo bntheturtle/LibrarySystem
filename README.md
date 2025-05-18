@@ -1,4 +1,6 @@
-This program manages a categorized library of books. It can:
+This program is my most recent JAVA back-end project ! 
+
+this program can manage a categorized library of books. It can:
 
 -Load books from a file, where each line contains a genre and the book's details (title, author, publication year).
 
