@@ -12,7 +12,7 @@ public class Book implements Serializable{
 	protected final int publicationYear ;
 	
 	
-	// 1 -  
+	// 1 -  Constructor + handle possibilities of exceptions.
 	public Book (String title, String author, int year ) {
 		this.title = Objects.requireNonNull(title, "title cannot be null " ) ; 
 		this.author = Objects.requireNonNull(author,"author cannot be null") ; 
@@ -23,15 +23,15 @@ public class Book implements Serializable{
 
 			}
 	
-	// 2 - 
-	public String getTitle() {	return title; }
+	// 2 - Takes protected parameters and manages it safely for futur use.
+	public String getTitle() { return title; }
 	
-	public String getAuthor() {	return author ; }
+	public String getAuthor() { return author ; }
 	
 	public int getPublicationYear() { return publicationYear; }
 	
 	
-	// 3 - 
+	// 3 - handles different cases possibilities ahead + prevents duplicates
 	 @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -42,13 +42,12 @@ public class Book implements Serializable{
                author.equals(book.author);
     }
 
-	 // 4 -  
+	 // 4 - (equals is overriden, so hashcode too) Uses of hashcode to organize data objects. 
     @Override
     public int hashCode() {
         return Objects.hash(title, author, publicationYear);
     }
 
-    // 5 - 
     @Override
     public String toString() {
         return String.format("%s by %s (%d)", title, author, publicationYear);
