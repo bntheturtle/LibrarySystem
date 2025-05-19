@@ -14,7 +14,7 @@ package newLibrarySystem;
 		
 		
 		
-		// 6 - 
+		// 6 - loads from the file + BufferedReader for maxCapacity + try-with-resources for handling the file manipulation safely. 
 		public void loadFromAFile(String filename) {
 			try (BufferedReader reader = new BufferedReader(new FileReader(filename))){
 				String line; 
@@ -41,7 +41,7 @@ package newLibrarySystem;
 			
 		}
 
-		// 7 - 
+		// 7 - saves to the file  + loops through map to separate genre from book's basic info. 
 		public void saveToFile(String filename) {
 			try(BufferedWriter writer = new BufferedWriter(new FileWriter(filename))){
 				for(Map.Entry<String, List<Book>> entry: booksByGenre.entrySet()) {
